@@ -1,0 +1,37 @@
+<h1 mat-dialog-title class="h1dialog">{{title}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formAlumno" >
+    <!-- NOMBRE -->
+    <mat-form-field >
+        <mat-label>Nombre</mat-label>
+        <input matInput  formControlName="nombre" placeholder="Ingrese Nombre">
+      </mat-form-field>
+      <p *ngIf="formAlumno.get('nombre')?.touched && formAlumno.get('nombre')?.errors?.['required']" class="text-danger">Este campo es requerido.</p>
+    <!-- APELLIDO -->
+    <mat-form-field >
+        <mat-label>Apellido</mat-label>
+        <input matInput  formControlName="apellido" placeholder="Ingrese Apellido">
+      </mat-form-field>
+      <p *ngIf="formAlumno.get('apellido')?.touched && formAlumno.get('apellido')?.errors?.['required']" class="text-danger">Este campo es requerido.</p>
+    <!-- TELEFONO -->
+    <mat-form-field >
+        <mat-label>Telefono</mat-label>
+        <input matInput  formControlName="telefono" placeholder="Ingrese Telefono">
+      </mat-form-field>
+      <p *ngIf="formAlumno.get('telefono')?.touched && formAlumno.get('telefono')?.errors?.['required']" class="text-danger">Este campo es requerido.</p>
+      <p *ngIf="formAlumno.get('telefono')?.touched && formAlumno.get('telefono')?.errors?.['pattern']" class="text-danger">Solo son validos numeros.</p>
+      <p *ngIf="formAlumno.get('telefono')?.touched && formAlumno.get('telefono')?.errors?.['minlength']" class="text-danger">El telefono debe tener al menos 9 numeros.</p>
+    <!-- E_MAIL -->
+    <mat-form-field >
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email" placeholder="Ingrese E-mail">
+      </mat-form-field>
+      <p *ngIf="formAlumno.get('email')?.touched && formAlumno.get('email')?.errors?.['required']" class="text-danger">Este campo es requerido.</p>
+      <p *ngIf="formAlumno.get('email')?.touched && formAlumno.get('email')?.errors?.['pattern']" class="text-danger">El formato de correo no es correcto.</p>
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <!-- <button mat-button mat-dialog-close>Cancelar</button> -->
+  <button mat-button  (click)="guardar()">Guardar</button>
+</div>

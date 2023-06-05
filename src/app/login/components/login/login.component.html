@@ -1,0 +1,30 @@
+<div class="col-md-12 loginBox ">
+  <form action="" [formGroup]="formLogin" (ngSubmit)="login()" class="custom-form">
+    <h1>Bienvenido</h1>
+      <div class="">
+        <mat-form-field appearance="fill" class="fill">
+          <mat-label>Usuario ==> admin / user</mat-label>
+          <input type="text" matInput formControlName="userName">
+
+        </mat-form-field>
+        <p *ngIf="formLogin.get('userName')?.touched && formLogin.get('userName')?.errors?.['required']" class="text-danger">Ingresa tu usuario.</p>
+      </div>
+      <div class="">
+        <mat-form-field  appearance="fill" class="fill">
+          <mat-label>Contraseña ==> admin / user</mat-label>
+          <input type="password" matInput formControlName="userPass">
+        </mat-form-field>
+        <p *ngIf="formLogin.get('userPass')?.touched && formLogin.get('userPass')?.errors?.['required']" class="text-danger">Ingresa la contraseña.</p>
+      </div>
+
+      <div class="loginFin">
+        <!-- <div class="">
+          <mat-label>¿Admin?</mat-label>
+          <mat-slide-toggle matInput formControlName="userAdmin"></mat-slide-toggle><br>
+        </div> -->
+        <div class="">
+          <button type="submit" mat-raised-button color="primary">Entrar</button>
+        </div>
+      </div>
+  </form>
+</div>

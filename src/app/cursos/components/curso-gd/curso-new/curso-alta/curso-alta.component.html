@@ -1,0 +1,22 @@
+<h1 mat-dialog-title class="h1dialog">{{title}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formCurso" >
+    <mat-form-field >
+      <mat-label>Nombre</mat-label>
+      <input matInput  formControlName="nombre" placeholder="Ingrese Nombre">
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Categoria</mat-label>
+      <input matInput  formControlName="categoria" placeholder="Ingrese Categoria">
+    </mat-form-field>
+    <mat-label>Habilitado </mat-label>
+    <mat-slide-toggle matInput formControlName="estado"></mat-slide-toggle><br>
+    <mat-form-field >
+      <mat-label>Descripcion</mat-label>
+      <textarea formControlName="descripcion" matInput placeholder="Ingrese Descripcion."></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button  (click)="guardar()">Guardar</button>
+</div>

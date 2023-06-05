@@ -1,0 +1,18 @@
+<h1 mat-dialog-title class="h1dialog">{{title}}</h1>
+<div mat-dialog-content>
+  <form class="formUser"[formGroup]="formUsuario" >
+    <mat-form-field >
+      <mat-label>Usuario</mat-label>
+      <input matInput  formControlName="userName" placeholder="Ingrese Usuario">
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Contraseña</mat-label>
+      <input matInput  formControlName="userPass" placeholder="Ingrese Constraseña">
+    </mat-form-field><br>
+      <mat-label>Administrador</mat-label>
+      <mat-slide-toggle matInput formControlName="userAdmin"></mat-slide-toggle><br>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button  (click)="guardar()">Guardar</button>
+</div>
